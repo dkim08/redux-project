@@ -80,7 +80,7 @@
     color: #3870C9;
 }
 
-/* @media (max-width: 320px) {
+@media (max-width: 320px) {
     .card {
         width: 100%;
         max-width: 200px;
@@ -88,4 +88,4 @@
         height: 300px;
         min-height: 180px;
     }
-} */
+}
