@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { RootState, AppDispatch } from "../../store";
 import { toggleTheme } from "../../store/Theme/theme";
@@ -10,10 +10,6 @@ const Card: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   const onToggleTheme = () => { dispatch(toggleTheme()) };
-
-  useEffect(() => {
-    document.body.className = currentTheme === "dark" ? "body-dark" : "body-light";
-  }, [currentTheme]);
 
   return (
     <div className={`card ${currentTheme === "dark" ? "card-dark" : "card-light"}`}>
