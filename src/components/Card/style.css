@@ -25,7 +25,7 @@
 .card-text {
     font-size: 1rem;
     margin: 4px 0 0 0;
-    color: #0000009e;
+    color: var(--card-description-color);
     font-weight: 200;
 }
 
@@ -42,11 +42,11 @@
 }
 
 .card-btn-light {
-    background-color: #fff;
+    background-color: var(--button-bg-color);
 }
 
 .card-btn-dark {
-    background-color: #D2BD00;
+    background-color: var(--card-bg-color);
 }
 
 .text-content {
@@ -62,34 +62,33 @@
 .card-text-dark {
     font-size: 20px;
     margin-top: 0px;
-    color: #4700b8b2;
+    color: var(--card-description-color);
 }
 
 .card-dark {
-    background: #D2BD00;
-    color: #4700B8DE;
+    background: var(--card-bg-color);
+    color: var(--card-title-color);
 }
 
 .card-light {
-    background: #FFFFFF;
-    color: #000000;
+    background: var(--card-bg-color);
+    color: var(--card-title-color);
 }
 
 .card-btn-dark {
-    color: #FFFFFF;
-
+    color: var(--button-text-color);
 }
 
 .card-btn-light {
-    color: #3870C9;
+    color: var(--button-text-color);
 }
 
 .body-dark {
-    background-color: #000000;
+    background-color: var(--background);
 }
 
 .body-light {
-    background-color: #FFFFFF;
+    background-color: var(--background);
 }
 
 @media (max-width: 320px) {

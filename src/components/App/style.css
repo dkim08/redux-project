@@ -5,9 +5,9 @@
 }
 
 .app-light {
-  background-color: #ffffff;
+  background-color: var(--background);
 }
 
 .app-dark {
-  background-color: #121212;
+  background-color: var(--background);
 }

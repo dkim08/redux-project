@@ -1,0 +1,31 @@
+*{
+    transition: all 0.3s ease-in-out;
+}
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --blue: #3870C9;
+    --white: #FFFFFF;
+    --yellow: #D2BD00;
+    --purple: #4700B8DE;
+    --gray: #0000009e;
+    --light-purple: #4700b8b2;
+}
+
+[class*="light"] {
+    --card-bg-color: var(--white);
+    --card-title-color: var(--black);
+    --card-description-color: var(--gray);
+    --button-bg-color: var(--white);
+    --button-text-color: var(--blue);
+    --background:var(--white);
+}
+
+[class*="dark"] {
+    --card-bg-color: var(--yellow);
+    --card-title-color: var(--purple);
+    --card-description-color: var(--light-purple);
+    --button-bg-color: var(--yellow);
+    --button-text-color: var(--white);
+    --background:var(--black);
+}
