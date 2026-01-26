@@ -1,0 +1,22 @@
+.fire-card {
+  box-sizing: border-box;
+}
+
+.fire-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.fire-card-text {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.fire-card-list {
+  padding-left: 20px;
+}
+
+.fire-card-list li {
+  margin-bottom: 8px;
+}

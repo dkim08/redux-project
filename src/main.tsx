@@ -1,13 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./components/App/index.tsx";
-import { Provider } from "react-redux";
-import { store } from "./store";
+import FireCard from "./components";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+      < FireCard
+        title="Card Title"
+        contentType="list-bulleted"
+        items={["First item", "Second item", "Third item"]}
+        sx={{
+          backgroundColor: '#7A3A2E',
+          textColor: '#FFFFFF',
+          borderRadius: '16px',
+          padding: '20px',
+          maxWidth: '400px',
+        }}
+      />
   </React.StrictMode>
 );
