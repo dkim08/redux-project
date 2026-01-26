@@ -3,7 +3,7 @@ import "./style.css";
 
 export interface IFireCardProps {
   title?: string;
-  contentType?: 'text' | 'list-numbered' | 'list-bulleted';
+  contentType: 'text' | 'listNumbered' | 'listBulleted';
   text?: string;
   items?: string[];
 
@@ -17,7 +17,6 @@ export interface IFireCardProps {
 
   className?: string;
 }
-
 
 const FireCard: React.FC<IFireCardProps> = ({
   title,
@@ -33,40 +32,34 @@ const FireCard: React.FC<IFireCardProps> = ({
   },
   className,
 }) => {
-  
-  const renderContent = () => {
-    switch (contentType) {
-      case "text":
-        return text ? (
-          <p className="fire-card-text">{text}</p>
-        ) : null;
 
-      case "list-numbered":
-        return (
-          <ol className="fire-card-list">
-            {items.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ol>
-        );
+  const Text = () => (<p className="fire-card-text">{text}</p>);
 
-      case "list-bulleted":
-        return (
-          <ul className="fire-card-list">
-            {items.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        );
+  const ListNumbered = () => (
+    <ol className="fire-card-list">
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ol>
+  );
 
-      default:
-        return null;
-    }
-  };
+  const ListBulleted = () => (
+    <ul className="fire-card-list">
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+
+  const contentStructure = {
+    text: <Text />,
+    listNumbered: <ListNumbered />,
+    listBulleted: <ListBulleted />,
+  }
 
   return (
     <div
-      className={`fire-card ${className || ''}`}
+      className={`fire-cards ${className || ''}`}
       style={{
         backgroundColor: sx.backgroundColor,
         color: sx.textColor,
@@ -75,8 +68,15 @@ const FireCard: React.FC<IFireCardProps> = ({
         maxWidth: sx.maxWidth,
       }}
     >
-      <h2 className="fire-card-title">{title}</h2>
-      {renderContent()}   
+      <div className="card">
+        <h2 className="fire-card-title">{title}</h2>
+        {contentStructure[contentType]}
+      </div>
+
+      <div className="card">
+        <h2 className="fire-card-title">{title}</h2>
+        {contentStructure[contentType]}
+      </div>
     </div>
   );
 };

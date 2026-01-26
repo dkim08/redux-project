@@ -6,7 +6,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
       < FireCard
         title="Card Title"
-        contentType="list-bulleted"
+        contentType="listNumbered"
         items={["First item", "Second item", "Third item"]}
         sx={{
           backgroundColor: '#7A3A2E',
@@ -15,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           padding: '20px',
           maxWidth: '400px',
         }}
+        
       />
   </React.StrictMode>
 );

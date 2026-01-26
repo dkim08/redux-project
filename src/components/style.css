@@ -1,22 +1,26 @@
-.fire-card {
+.fire-cards {
   box-sizing: border-box;
 }
 
-.fire-card-title {
+.fire-cards-title {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 16px;
 }
 
-.fire-card-text {
+.fire-cards-text {
   font-size: 16px;
   line-height: 1.5;
 }
 
-.fire-card-list {
+.fire-cards-list {
   padding-left: 20px;
 }
 
-.fire-card-list li {
+.fire-cards-list li {
   margin-bottom: 8px;
+}
+
+.card {
+  margin-bottom: 20px;
 }
