@@ -73,10 +73,6 @@ const FireCard: React.FC<IFireCardProps> = ({
         {contentStructure[contentType]}
       </div>
 
-      <div className="card">
-        <h2 className="fire-card-title">{title}</h2>
-        {contentStructure[contentType]}
-      </div>
     </div>
   );
 };
