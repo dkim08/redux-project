@@ -8,3 +8,25 @@
     background-color: rgb(68, 68, 68);
     line-height: 1.5;
 }
+
+.list-card ol{
+    padding-left: 30px;
+}
+
+.list-card-home-safety li, .list-card-fire-safety li {
+    padding-bottom: 20px;
+    list-style: none;
+}
+
+.list-card-home-safety li:last-child, .list-card-fire-safety li:last-child {
+    padding-bottom: 0px;
+}
+
+.list-card-home-safety li:first-child {
+    padding-top: 10px;
+}
+
+
+.list-card-fire-safety li:first-child {
+    padding-top: 20px;
+}
