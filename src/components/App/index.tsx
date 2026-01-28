@@ -5,7 +5,7 @@ import "./style.css";
 const App: React.FC = () => {
   return (
     <div className="app-container">
-      {/* <FireCard
+      <FireCard
         className="list-card"
         contentType="listNumbered"
         items={[
@@ -22,9 +22,9 @@ const App: React.FC = () => {
           padding: '31px 10px 31px 31px',
           maxWidth: '564px',
         }}
-      /> */}
+      />
 
-      {/* <FireCard
+      <FireCard
         className="list-card"
         contentType="listBulleted"
         items={[
@@ -41,7 +41,7 @@ const App: React.FC = () => {
           padding: '31px 10px 31px 31px',
           maxWidth: '564px',
         }}
-      /> */}
+      />
 
       <FireCard
         className="list-card-home-safety"
