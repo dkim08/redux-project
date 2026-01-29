@@ -36,7 +36,7 @@ const FireCard: React.FC<IFireCardProps> = ({
   const Text = () => (<p className="fire-card-text">{text}</p>);
 
   const ListNumbered = () => (
-    <ol className="fire-card-list">
+    <ol className="list-card-home-safety">
       {items.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
@@ -44,7 +44,7 @@ const FireCard: React.FC<IFireCardProps> = ({
   );
 
   const ListBulleted = () => (
-    <ul className="fire-card-list">
+    <ul className="list-card-fire-safety">
       {items.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
@@ -68,7 +68,7 @@ const FireCard: React.FC<IFireCardProps> = ({
         maxWidth: sx.maxWidth,
       }}
     >
-      <div className="card">
+      <div className="simple-card-content">
         <h2 className="fire-card-title">{title}</h2>
         {contentStructure[contentType]}
       </div>

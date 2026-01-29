@@ -1,12 +1,22 @@
 import React from "react";
 import FireCard from "../index";
 import "./style.css";
+import { useEffect, useState } from "react";
+
 
 const App: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="app-container">
       <FireCard
-        className="list-card"
         contentType="listNumbered"
         items={[
           "Первое и самое важное — немедленно вызвать пожарную службу по номеру 101.",
@@ -19,13 +29,12 @@ const App: React.FC = () => {
           backgroundColor: 'rgba(122, 58, 46, 0.75)',
           textColor: '#FFFFFF',
           borderRadius: '25px',
-          padding: '31px 10px 31px 31px',
+          padding: '31px 10px',
           maxWidth: '564px',
         }}
       />
 
       <FireCard
-        className="list-card"
         contentType="listBulleted"
         items={[
           "Первое и самое важное — немедленно вызвать пожарную службу по номеру 101.",
@@ -44,7 +53,6 @@ const App: React.FC = () => {
       />
 
       <FireCard
-        className="list-card-home-safety"
         contentType="listBulleted"
         title="Домашние меры безопасности"
         items={[
@@ -63,7 +71,6 @@ const App: React.FC = () => {
       />
 
       <FireCard
-        className="list-card-fire-safety"
         contentType="listBulleted"
         title="Безопасное обращение с огнём"
         items={[
@@ -76,7 +83,7 @@ const App: React.FC = () => {
           backgroundColor: 'rgba(122, 58, 46, 0.75)',
           textColor: '#FFFFFF',
           borderRadius: '25px',
-          padding: '31px 50px 31px 50px',
+          padding: isMobile ? '31px 25px' : '31px 50px',
           maxWidth: '488px',
         }}
       />
