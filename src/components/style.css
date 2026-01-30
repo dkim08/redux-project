@@ -1,12 +1,20 @@
 .simple-cards {
     border: solid 1px #ffffff;
-    margin: 20px;
+    margin: 30px;
 }
 
 .simple-card-numbered-safety,
 .simple-card-bulleted-safety {
     padding-bottom: 10px;
     padding-left: 30px;
+}
+
+.simple-card-bulleted-safety {
+    list-style: disc;
+}
+
+.simple-card-numbered-safety {
+    list-style: decimal;
 }
 
 .list-no-style {

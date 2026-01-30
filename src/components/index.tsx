@@ -6,7 +6,7 @@ export interface IFireCardProps {
   contentType: 'text' | 'listNumbered' | 'listBulleted'
   text?: string;
   items?: string[];
-
+  listStyle?: 'none' | 'disc' | 'decimal';
   sx?: {
     backgroundColor?: string;
     textColor?: string;
@@ -23,6 +23,7 @@ const FireCard: React.FC<IFireCardProps> = ({
   contentType,
   text,
   items = [],
+  listStyle = 'none',
   sx = {
     backgroundColor: '#7A3A2E',
     textColor: '#FFFFFF',
@@ -45,10 +46,10 @@ const FireCard: React.FC<IFireCardProps> = ({
   );
 
   const ListBulleted = () => {
-    const listNoStyle = title ? true : false;
+    const listNoStyle = listStyle === 'none' && 'list-no-style';
 
     return (
-      <ul className={`simple-card-bulleted-safety ${listNoStyle ? 'list-no-style' : ''}`}>
+      <ul className={`simple-card-bulleted-safety ${listNoStyle}`}>
         {items.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
