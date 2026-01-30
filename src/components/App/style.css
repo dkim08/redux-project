@@ -3,8 +3,26 @@
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: rgb(68, 68, 68);
     line-height: 1.5;
+}
+
+
+@media (max-width: 768px) {
+    .app-container {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 374px) {
+    .app-container {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .list-card ol {
+        padding-left: 10px;
+    }
 }

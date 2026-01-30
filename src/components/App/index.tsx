@@ -1,8 +1,19 @@
 import React from "react";
 import FireCard from "../index";
 import "./style.css";
+import { useEffect, useState } from "react";
+
 
 const App: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="app-container">
       <FireCard
@@ -14,11 +25,12 @@ const App: React.FC = () => {
           "Указать, есть ли люди внутри.",
           "Назвать своё имя и номер телефона для обратной связи.",
         ]}
+        listStyle="decimal"
         sx={{
           backgroundColor: 'rgba(122, 58, 46, 0.75)',
           textColor: '#FFFFFF',
           borderRadius: '25px',
-          padding: '31px 10px 31px 31px',
+          padding: '31px 10px',
           maxWidth: '564px',
         }}
       />
@@ -32,19 +44,26 @@ const App: React.FC = () => {
           "Указать, есть ли люди внутри.",
           "Назвать своё имя и номер телефона для обратной связи.",
         ]}
+        listStyle="disc"
         sx={{
           backgroundColor: 'rgba(122, 58, 46, 0.75)',
           textColor: '#FFFFFF',
           borderRadius: '25px',
-          padding: '31px 10px 31px 31px',
+          padding: '31px 10px',
           maxWidth: '564px',
         }}
       />
 
       <FireCard
-        contentType="text"
+        contentType="listBulleted"
         title="Домашние меры безопасности"
-        text="Установить дома дымовые извещатели — они заранее предупредят о задымлении. Хранить спички и зажигалки в недоступных для детей местах. Проверять исправность электропроводки и газового оборудования. Не хранить легко воспламеняющиеся жидкости (бензин, растворители) рядом с источниками тепла."
+        items={[
+          "Установить дома дымовые извещатели — они заранее предупредят о задымлении.",
+          "Хранить спички и зажигалки в недоступных для детей местах.",
+          "Проверять исправность электропроводки и газового оборудования.",
+          "Не хранить легко воспламеняющиеся жидкости (бензин, растворители) рядом с источниками тепла."
+        ]}
+        listStyle="none"
         sx={{
           backgroundColor: 'rgba(122, 58, 46, 0.75)',
           textColor: '#FFFFFF',
@@ -55,14 +74,20 @@ const App: React.FC = () => {
       />
 
       <FireCard
-        contentType="text"
+        contentType="listBulleted"
         title="Безопасное обращение с огнём"
-        text="Никогда не играть со спичками, зажигалками, свечами и петардами.Не оставлять открытый огонь без присмотра.На природе разводить костёр только в разрешённых местах и всегда полностью тушить его перед уходом.Не использовать свечи рядом с тканями, бумагой или легко воспламеняющимися предметами."
+        items={[
+          "Никогда не играть со спичками, зажигалками, свечами и петардами.",
+          "Не оставлять открытый огонь без присмотра.",
+          "На природе разводить костёр только в разрешённых местах и всегда полностью тушить его перед уходом.",
+          "Не использовать свечи рядом с тканями, бумагой или легко воспламеняющимися предметами."
+        ]}
+        listStyle="none"
         sx={{
           backgroundColor: 'rgba(122, 58, 46, 0.75)',
           textColor: '#FFFFFF',
           borderRadius: '25px',
-          padding: '31px 50px 31px 50px',
+          padding: isMobile ? '31px 25px' : '31px 50px',
           maxWidth: '488px',
         }}
       />
