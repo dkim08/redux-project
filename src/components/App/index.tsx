@@ -47,7 +47,7 @@ const App: React.FC = () => {
           backgroundColor: 'rgba(122, 58, 46, 0.75)',
           textColor: '#FFFFFF',
           borderRadius: '25px',
-          padding: '31px 10px 31px 31px',
+          padding: '31px 10px',
           maxWidth: '564px',
         }}
       />

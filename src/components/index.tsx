@@ -3,7 +3,7 @@ import "./style.css";
 
 export interface IFireCardProps {
   title?: string;
-  contentType: 'text' | 'listNumbered' | 'listBulleted';
+  contentType: 'text' | 'listNumbered' | 'listBulleted'
   text?: string;
   items?: string[];
 
@@ -33,23 +33,30 @@ const FireCard: React.FC<IFireCardProps> = ({
   className,
 }) => {
 
-  const Text = () => (<p className="fire-card-text">{text}</p>);
+  const Text = () => (<p className="simple-card-text">{text}</p>);
+
 
   const ListNumbered = () => (
-    <ol className="list-card-home-safety">
+    <ol className="simple-card-numbered-safety">
       {items.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
     </ol>
   );
 
-  const ListBulleted = () => (
-    <ul className="list-card-fire-safety">
-      {items.map((item, index) => (
-        <li key={index}>{item}</li>
-      ))}
-    </ul>
-  );
+  const ListBulleted = () => {
+    const listNoStyle = title ? true : false;
+
+    return (
+      <ul className={`simple-card-bulleted-safety ${listNoStyle ? 'list-no-style' : ''}`}>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    );
+  };
+
+
 
   const contentStructure = {
     text: <Text />,
@@ -59,7 +66,7 @@ const FireCard: React.FC<IFireCardProps> = ({
 
   return (
     <div
-      className={`fire-cards ${className || ''}`}
+      className={`simple-cards ${className || ''}`}
       style={{
         backgroundColor: sx.backgroundColor,
         color: sx.textColor,
@@ -69,7 +76,7 @@ const FireCard: React.FC<IFireCardProps> = ({
       }}
     >
       <div className="simple-card-content">
-        <h2 className="fire-card-title">{title}</h2>
+        <h2 className="simple-card-title">{title}</h2>
         {contentStructure[contentType]}
       </div>
 
