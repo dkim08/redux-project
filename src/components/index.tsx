@@ -3,7 +3,7 @@ import "./style.css";
 
 export interface IFireCardProps {
   title?: string;
-  contentType: 'text' | 'listNumbered' | 'listBulleted'
+  contentType: 'text' | 'listNumbered' | 'listBulleted';
   text?: string;
   items?: string[];
   listStyle?: 'none' | 'disc' | 'decimal';
