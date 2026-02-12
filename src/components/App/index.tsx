@@ -2,6 +2,7 @@ import React from "react";
 import FireCard from "../index";
 import "./style.css";
 import { useEffect, useState } from "react";
+import CustomComponent from "../CustomComponent";
 
 
 const App: React.FC = () => {
@@ -16,6 +17,8 @@ const App: React.FC = () => {
 
   return (
     <div className="app-container">
+      <CustomComponent />
+      
       <FireCard
         contentType="listNumbered"
         items={[
