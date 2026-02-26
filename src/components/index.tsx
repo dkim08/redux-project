@@ -6,7 +6,7 @@ export interface IFireCardProps {
   contentType: 'text' | 'listNumbered' | 'listBulleted';
   text?: string;
   items?: string[];
-
+  listStyle?: 'none' | 'disc' | 'decimal';
   sx?: {
     backgroundColor?: string;
     textColor?: string;
@@ -23,6 +23,7 @@ const FireCard: React.FC<IFireCardProps> = ({
   contentType,
   text,
   items = [],
+  listStyle = 'none',
   sx = {
     backgroundColor: '#7A3A2E',
     textColor: '#FFFFFF',
@@ -33,23 +34,30 @@ const FireCard: React.FC<IFireCardProps> = ({
   className,
 }) => {
 
-  const Text = () => (<p className="fire-card-text">{text}</p>);
+  const Text = () => (<p className="simple-card-text">{text}</p>);
+
 
   const ListNumbered = () => (
-    <ol className="fire-card-list">
+    <ol className="simple-card-numbered-safety">
       {items.map((item, index) => (
         <li key={index}>{item}</li>
       ))}
     </ol>
   );
 
-  const ListBulleted = () => (
-    <ul className="fire-card-list">
-      {items.map((item, index) => (
-        <li key={index}>{item}</li>
-      ))}
-    </ul>
-  );
+  const ListBulleted = () => {
+    const listNoStyle = listStyle === 'none' && 'list-no-style';
+
+    return (
+      <ul className={`simple-card-bulleted-safety ${listNoStyle}`}>
+        {items.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    );
+  };
+
+
 
   const contentStructure = {
     text: <Text />,
@@ -59,7 +67,7 @@ const FireCard: React.FC<IFireCardProps> = ({
 
   return (
     <div
-      className={`fire-cards ${className || ''}`}
+      className={`simple-cards ${className || ''}`}
       style={{
         backgroundColor: sx.backgroundColor,
         color: sx.textColor,
@@ -68,8 +76,8 @@ const FireCard: React.FC<IFireCardProps> = ({
         maxWidth: sx.maxWidth,
       }}
     >
-      <div className="card">
-        <h2 className="fire-card-title">{title}</h2>
+      <div className="simple-card-content">
+        <h2 className="simple-card-title">{title}</h2>
         {contentStructure[contentType]}
       </div>
 

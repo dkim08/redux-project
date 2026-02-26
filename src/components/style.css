@@ -1,15 +1,35 @@
-.fire-cards {
-  box-sizing: border-box;
-  border: solid 1px #ffffff;
-  margin: 30px;
+.simple-cards {
+    border: solid 1px #ffffff;
+    margin: 30px;
 }
 
-.fire-cards-title {
-  font-size: 20px;
-  margin-bottom: 20px;
+.simple-card-numbered-safety,
+.simple-card-bulleted-safety {
+    padding-bottom: 10px;
+    padding-left: 30px;
 }
 
-.fire-cards-text {
-  font-size: 16px;
+.simple-card-bulleted-safety {
+    list-style: disc;
 }
 
+.simple-card-numbered-safety {
+    list-style: decimal;
+}
+
+.list-no-style {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-no-style li {
+    padding-bottom: 20px;
+}
+
+.list-no-style li:first-child {
+    padding-top: 10px;
+}
+
+.list-no-style li:last-child {
+    padding-bottom: 0;
+}
